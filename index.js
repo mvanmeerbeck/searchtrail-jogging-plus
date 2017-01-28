@@ -51,14 +51,18 @@ var trailCrawler = new Crawler({
     maxConnections: 10,
     rateLimit: 5000,
     callback: function (error, res, done) {
-        if (error) {
-            console.log(error);
-        } else {
-            var $ = res.$;
-            trails[$('#bloc-event-fiche').text()].city = $('#bloc-ville-valeur').text();
-        }
+        if (error) throw error;
 
-        insertTrail(trails[$('#bloc-event-fiche').text()]);
+        var $ = res.$;
+        var trail = trails[$('#bloc-event-fiche').text()];
+        delete trails[$('#bloc-event-fiche').text()];
+
+        Object.assign(trail, {
+            city: $('#bloc-ville-valeur').text(),
+            url: res.request.uri.href
+        });
+
+        insertTrail(trail);
         done();
     }
 });
