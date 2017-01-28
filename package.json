@@ -1,0 +1,25 @@
+{
+  "name": "searchtrail-jogging-plus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvanmeerbeck/searchtrail-jogging-plus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvanmeerbeck/searchtrail-jogging-plus/issues"
+  },
+  "homepage": "https://github.com/mvanmeerbeck/searchtrail-jogging-plus#readme",
+  "dependencies": {
+    "config": "^1.24.0",
+    "crawler": "^1.0.2",
+    "dotenv": "^4.0.0",
+    "mysql": "^2.13.0"
+  }
+}
